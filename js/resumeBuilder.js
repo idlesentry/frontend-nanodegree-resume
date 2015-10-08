@@ -1,20 +1,21 @@
-var name="Ryan Rittenhouse";
-var role="Web Developer";
-
+var name = "Ryan Rittenhouse";
 var formattedName = HTMLheaderName.replace("%data%", name);
+
+var role = "Web Developer";
 var formattedRole = HTMLheaderName.replace("%data%", role);
+
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
 
 var bio = {
 	"name" : "Ryan Rittenhouse",
 	"city" : "Bellingham, WA",
 	"age" : "33",
-	"skills" : ["Teaching and Research of English Literature, Formal Writing, Web Development"],
+	"skills" : ["Teaching and Research of English Literature", "Formal Writing", "Web Development"],
 	"interests" : ["Homebrewing, Hiking and Camping, Reading"],
 	"contactInfo" : "idlesentry@gmail.com",
 	"welcomeMessage" : "Welcome to my resume!"
 };
-
-console.log(bio.skills[0]));
 
 var work = {
 	"jobs" : [
@@ -60,15 +61,15 @@ var education = {
 		"url" : "http://www.wwu.edu/"
 	}
 	]
-	},
-	"online courses" : [
-	{
-		"title" : "Javascript Syntax",
-		"school" : "Udacity",
-		"date" : "2015",
-		"url" : "http://www.udacity.com/course/ud804"
-	}
-};
+	};
+//	"online courses" : [
+//	{
+//		"title" : "Javascript Syntax",
+//		"school" : "Udacity",
+//		"date" : "2015",
+//		"url" : "http://www.udacity.com/course/ud804"
+//	}
+//};
 
 var projects = {
 	"projects" : [
@@ -78,14 +79,16 @@ var projects = {
 	]
 };
 
+console.log(bio.skills);
+
 if (bio.skills.length > 0) {
 	$("#header").append(HTMLskillsStart);
 
-	var formattedSkill=HTMLskills.replace("%data%", bio.skills[0]};
+	var formattedSkill=HTMLskills.replace("%data%", bio.skills[0]);
 	$("#skills").append(formattedSkill);
-	formattedSkill=HTMLskills.replace("%data%", bio.skills[1]};
+	formattedSkill=HTMLskills.replace("%data%", bio.skills[1]);
 	$("#skills").append(formattedSkill);
-	formattedSkill=HTMLskills.replace("%data%", bio.skills[2]};
+	formattedSkill=HTMLskills.replace("%data%", bio.skills[2]);
 	$("#skills").append(formattedSkill);
 }
 	
