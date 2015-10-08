@@ -1,51 +1,91 @@
-var name="Ryan Rittenhouse"
-var role="Web Developer"
-var awesomeThoughts="My name is Ryan Rittenhouse and I am awesome!";
+var name="Ryan Rittenhouse";
+var role="Web Developer";
 
-var funThoughts = awesomeThoughts.replace("awesome", "fun");
-var formattedName = HTMLheaderName.replace("%data%", name)
-var formattedRole = HTMLheaderName.replace("%data%", role)
-var skills = ["awesomeness", "teaching", "research", "formal writing"];
+var formattedName = HTMLheaderName.replace("%data%", name);
+var formattedRole = HTMLheaderName.replace("%data%", role);
+
 var bio = {
 	"name" : "Ryan Rittenhouse",
+	"city" : "Bellingham, WA",
 	"age" : "33",
 	"skills" : ["Teaching and Research of English Literature, Formal Writing, Web Development"],
+	"interests" : ["Homebrewing, Hiking and Camping, Reading"],
 	"contactInfo" : "idlesentry@gmail.com",
-	"welcomeMessage" : "welcome message"
+	"welcomeMessage" : "Welcome to my resume!"
 };
 
-bio.city = "Bellingham, WA";
+console.log(bio.skills[0]));
 
-var work = {};
-work.name = "Western Washington University";
-work.years = "2013-2015";
-work.city = "Bellingham, WA";
+var work = {
+	"jobs" : [
+	{
+		"name" : "Western Washington University",
+		"title" : "Research Assistant",
+		"city" : "Bellingham, WA",
+		"date" : "2013-2014"
+	},
+	{
+		"name" : "Western Washington University",
+		"title" : "Instructor",
+		"city" : "Bellingham, WA",
+		"date" : "2014-2015"
+	}
+	]
+};
 
-var school = {};
-school["name"] = "Western Washington University";
-school["years"] = "2013-2015";
-school["city"] = "Bellingham, WA";
+var education = {
+	"schools" : [
+	{
+		"name" : "Walla Walla Community College",
+		"city" : "Walla Walla, WA",
+		"degree" : "Associate of Arts",
+		"major" :"n/a",
+		"date" : "2007-2009",
+		"url" : "http://www.wwcc.edu/"
+	},
+	{
+		"name" : "Western Washington University",
+		"city" : "Bellingham, WA",
+		"degree" : "Bachelor of Arts",
+		"major" :"English Literature",
+		"date" : "2009-2012",
+		"url" : "http://www.wwu.edu/"
+	},
+	{
+		"name" : "Western Washington University",
+		"city" : "Bellingham, WA",
+		"degree" : "Master of Arts",
+		"major" :"English Literature",
+		"date" : "2013-2015",
+		"url" : "http://www.wwu.edu/"
+	}
+	]
+	},
+	"online courses" : [
+	{
+		"title" : "Javascript Syntax",
+		"school" : "Udacity",
+		"date" : "2015",
+		"url" : "http://www.udacity.com/course/ud804"
+	}
+};
 
-console.log(awesomeThoughts);
-console.log(funThoughts);
+var projects = {
+	"projects" : [
+	{
+		"project1" : ""
+	}
+	]
+};
 
+if (bio.skills.length > 0) {
+	$("#header").append(HTMLskillsStart);
 
-// $("#main").append(name);
-//$("#main").append(funThoughts);
-$("#header").append(formattedName);
-$("#header").append(formattedRole);
-//$("#main").append(skills[1]);
-$("#main").append(bio.name);
-$("#main").append(bio.age);
-$("#main").append(bio.contactInfo);
-$("#main").append(bio.skills);
-$("#main").append(bio.welcomeMessage);
-$("#main").append(bio.city);
-
-$("#main").append(work.name);
-$("#main").append(work.years);
-$("#main").append(work.city);
-
-$("#main").append(school["name"]);
-$("#main").append(school["years"]);
-$("#main").append(school["city"]);
+	var formattedSkill=HTMLskills.replace("%data%", bio.skills[0]};
+	$("#skills").append(formattedSkill);
+	formattedSkill=HTMLskills.replace("%data%", bio.skills[1]};
+	$("#skills").append(formattedSkill);
+	formattedSkill=HTMLskills.replace("%data%", bio.skills[2]};
+	$("#skills").append(formattedSkill);
+}
+	
