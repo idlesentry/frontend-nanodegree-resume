@@ -20,16 +20,18 @@ var bio = {
 var work = {
 	"jobs" : [
 	{
-		"name" : "Western Washington University",
+		"employer" : "Western Washington University",
 		"title" : "Research Assistant",
-		"city" : "Bellingham, WA",
-		"date" : "2013-2014"
+		"location" : "Bellingham, WA",
+		"dates" : "2013-2014",
+		"description" : "Responsible for compiling annotated bibliographies using databases such as EBSCOhost and JSTOR to compile annotated bibliographies for a sole professor's potential research. Also included assembling classroom materials such as powerpoints or lists of potential class reading material based on cost and content."
 	},
 	{
-		"name" : "Western Washington University",
+		"employer" : "Western Washington University",
 		"title" : "Instructor",
-		"city" : "Bellingham, WA",
-		"date" : "2014-2015"
+		"location" : "Bellingham, WA",
+		"dates" : "2014-2015",
+		"description" : "Responsible for a sense of professionalism in regards to lesson planning three times per week, researching and assembling classroom materials (activities, readings, etc.), and facilitating classroom discussion. Largely autonomous but guided by Director of Composition Donna Qualley."
 	}
 	]
 };
@@ -91,4 +93,16 @@ if (bio.skills.length > 0) {
 	formattedSkill=HTMLskills.replace("%data%", bio.skills[2]);
 	$("#skills").append(formattedSkill);
 }
-	
+
+for (job in work.jobs) {
+	$("#workExperience").append(HTMLworkStart);
+
+	var formattedEmployer=HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+	var formattedTitle=HTMLworkTitle.replace("%data%", work.jobs[job].title);
+	var formattedLocation=HTMLworkLocation.replace("%data%", work.jobs[job].city);
+	var formattedDates=HTMLworkDates.replace("%data%", work.jobs[job].dates);
+	var formattedDescription=HTMLworkDescription.replace("%data%", work.jobs[job].description);
+	var formattedWorkEntry = formattedEmployer + formattedTitle + formattedLocation + formattedDates + formattedDescription;
+
+	$(".work-entry:last").append(formattedWorkEntry);
+}
