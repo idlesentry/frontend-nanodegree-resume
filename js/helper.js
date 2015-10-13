@@ -15,13 +15,13 @@ replace the %data% placeholder text you see in them.
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span>%data%</span><hr/>';
 
-var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><span class="white-text">%data%</span></li>';
-var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
-var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
+var HTMLcontactGeneric = '<class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span>';
+var HTMLmobile = '<class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span>';
+var HTMLemail = '<class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span>';
+var HTMLtwitter = '<class="flex-item"><span class="orange-text">twitter</span><span class="white-text">%data%</span>';
+var HTMLgithub = '<class="flex-item"><span class="orange-text">github</span><span class="white-text">%data%</span>';
+var HTMLblog = '<class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span>';
+var HTMLlocation = '<class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
@@ -126,7 +126,7 @@ function initializeMap() {
     var locations = [];
 
     // adds the single location property from bio to the locations array
-    locations.push(bio.contacts.location);
+   locations.push(bio.contacts[contact].location);
 
     // iterates through school locations and appends each location to
     // the locations array
@@ -235,11 +235,11 @@ Uncomment the code below when you're ready to implement a Google Map!
 */
 
 // Calls the initializeMap() function when the page loads
-//window.addEventListener('load', initializeMap);
+window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
-//window.addEventListener('resize', function(e) {
+window.addEventListener('resize', function(e) {
   //Make sure the map bounds get updated on page resize
-//  map.fitBounds(mapBounds);
-//});
+map.fitBounds(mapBounds);
+});
